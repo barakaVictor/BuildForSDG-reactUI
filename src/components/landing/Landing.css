@@ -8,8 +8,11 @@
     padding-right: 15px;
     padding-left: 15px;
 }
+form{
+    text-align: left !important;
+}
 form > * {
-    margin-bottom: 1rem !important;
+    margin-bottom: .5rem !important;
 }
 .form-control{
     display: block;

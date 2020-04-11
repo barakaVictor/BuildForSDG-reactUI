@@ -94,35 +94,44 @@ class Landing extends React.Component{
                     <div className="row">
                         <div className="request-from">
                             <form onSubmit={this.fetchImpactEstimate}>
+                                <label for="data-population">Population</label>
                                 <input 
                                     type="number" 
                                     className="form-control" 
-                                    name="data-population" 
+                                    id="data-population" 
                                     value={this.state.request_data.population}
                                     onChange={(e)=>this.setState({request_data:{...this.state.request_data, population: e.target.value}})}/>
+                                
+                                <lable for="data-time-to-elapse">Time to Elapse</lable>
                                 <input 
                                     type="number" 
                                     className="form-control" 
-                                    name="data-time-to-elapse" 
+                                    id="data-time-to-elapse" 
                                     value={this.state.request_data.timeToElapse}
                                     onChange={(e)=>this.setState({request_data:{...this.state.request_data, timeToElapse: e.target.value}})}/>
+                                
+                                <label for="data-reported-cases">Reported Cases</label>
                                 <input 
                                     type="number" 
                                     className="form-control" 
-                                    name="data-reported-cases" 
+                                    id="data-reported-cases" 
                                     value={this.state.request_data.reportedCases}
                                     onChange={(e)=>this.setState({request_data:{...this.state.request_data, reportedCases: e.target.value}})}
                                     />
+                                
+                                <label for="data-total-hospital-beds">Total Hospital Beds</label>
                                 <input 
                                     type="number" 
                                     className="form-control" 
-                                    name="data-total-hospital-beds" 
+                                    id="data-total-hospital-beds" 
                                     value={this.state.request_data.totalHospitalBeds}
                                     onChange={(e)=>this.setState({request_data: {...this.state.request_data, totalHospitalBeds: e.target.value}})}
                                     />
+
+                                <label for="data-period-type">Period Type</label>    
                                 <select 
                                     className="custom-select" 
-                                    name="data-period-type"
+                                    id="data-period-type"
                                     defaultValue="days"
                                     onChange={(e)=>this.setState({request_data: {...this.state.request_data, periodType: e.target.value}})}
                                     >
@@ -130,9 +139,11 @@ class Landing extends React.Component{
                                         <option value="weeks">weeks</option>
                                         <option value="months">months</option>
                                 </select>
+
+                                <lable for="data-format">Response Data Format</lable>
                                 <select 
                                     className="custom-select" 
-                                    name="data-format"
+                                    id="data-format"
                                     defaultValue="json"
                                     onChange={(e)=>this.setState({response_data_format: e.target.value})}
                                     >
