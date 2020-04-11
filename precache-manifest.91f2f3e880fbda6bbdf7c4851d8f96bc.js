@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "04dd3bd902931fc58319fd69b97897e6",
+    "revision": "b41f78e0d52901b064652c365f4122ff",
     "url": "/BuildForSDG-reactUI/index.html"
   },
   {
-    "revision": "60c064012cb750a08b7e",
-    "url": "/BuildForSDG-reactUI/static/css/main.929308b5.chunk.css"
+    "revision": "49ec0504651e3c1002d0",
+    "url": "/BuildForSDG-reactUI/static/css/main.62ce2622.chunk.css"
   },
   {
     "revision": "e9ca75a0f1f95df132ba",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/BuildForSDG-reactUI/static/js/2.c0d66675.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "60c064012cb750a08b7e",
-    "url": "/BuildForSDG-reactUI/static/js/main.4601c03c.chunk.js"
+    "revision": "49ec0504651e3c1002d0",
+    "url": "/BuildForSDG-reactUI/static/js/main.73af7298.chunk.js"
   },
   {
     "revision": "09ea08fc496c70c8b7b9",
