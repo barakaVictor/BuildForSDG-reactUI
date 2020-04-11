@@ -140,7 +140,7 @@ class Landing extends React.Component{
                                         <option value="months">months</option>
                                 </select>
 
-                                <lable for="data-format">Response Data Format</lable>
+                                <label for="data-format">Response Data Format</label>
                                 <select 
                                     className="custom-select" 
                                     id="data-format"
