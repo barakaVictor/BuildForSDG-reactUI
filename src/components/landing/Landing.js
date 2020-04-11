@@ -102,7 +102,7 @@ class Landing extends React.Component{
                                     value={this.state.request_data.population}
                                     onChange={(e)=>this.setState({request_data:{...this.state.request_data, population: e.target.value}})}/>
                                 
-                                <lable for="data-time-to-elapse">Time to Elapse</lable>
+                                <label for="data-time-to-elapse">Time to Elapse</label>
                                 <input 
                                     type="number" 
                                     className="form-control" 
