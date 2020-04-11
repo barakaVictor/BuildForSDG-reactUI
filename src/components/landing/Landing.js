@@ -90,49 +90,54 @@ class Landing extends React.Component{
         return(
             <div className="py-5">
                 <div className='body'>
-                    <h1>covid19estimator UI</h1>
+                    <h1>Covid19Estimator UI</h1>
                     <div className="row">
                         <div className="request-from">
                             <form onSubmit={this.fetchImpactEstimate}>
-                                <label for="data-population">Population</label>
+                                <label htmlFor="data-population">Population</label>
                                 <input 
                                     type="number" 
                                     className="form-control" 
                                     id="data-population" 
+                                    data-population
                                     value={this.state.request_data.population}
                                     onChange={(e)=>this.setState({request_data:{...this.state.request_data, population: e.target.value}})}/>
                                 
-                                <label for="data-time-to-elapse">Time to Elapse</label>
+                                <label htmlFor="data-time-to-elapse">Time to Elapse</label>
                                 <input 
                                     type="number" 
                                     className="form-control" 
                                     id="data-time-to-elapse" 
+                                    data-time-to-elapse
                                     value={this.state.request_data.timeToElapse}
                                     onChange={(e)=>this.setState({request_data:{...this.state.request_data, timeToElapse: e.target.value}})}/>
                                 
-                                <label for="data-reported-cases">Reported Cases</label>
+                                <label htmlFor="data-reported-cases">Reported Cases</label>
                                 <input 
                                     type="number" 
                                     className="form-control" 
                                     id="data-reported-cases" 
+                                    data-reported-cases
                                     value={this.state.request_data.reportedCases}
                                     onChange={(e)=>this.setState({request_data:{...this.state.request_data, reportedCases: e.target.value}})}
                                     />
                                 
-                                <label for="data-total-hospital-beds">Total Hospital Beds</label>
+                                <label htmlFor="data-total-hospital-beds">Total Hospital Beds</label>
                                 <input 
                                     type="number" 
                                     className="form-control" 
-                                    id="data-total-hospital-beds" 
+                                    id="data-total-hospital-beds"
+                                    data-total-hospital-beds 
                                     value={this.state.request_data.totalHospitalBeds}
                                     onChange={(e)=>this.setState({request_data: {...this.state.request_data, totalHospitalBeds: e.target.value}})}
                                     />
 
-                                <label for="data-period-type">Period Type</label>    
+                                <label htmlFor="data-period-type">Period Type</label>    
                                 <select 
                                     className="custom-select" 
                                     id="data-period-type"
                                     defaultValue="days"
+                                    data-period-type
                                     onChange={(e)=>this.setState({request_data: {...this.state.request_data, periodType: e.target.value}})}
                                     >
                                         <option value="days">days</option>
@@ -140,8 +145,9 @@ class Landing extends React.Component{
                                         <option value="months">months</option>
                                 </select>
 
-                                <label for="data-format">Response Data Format</label>
+                                <label htmlFor="data-format">Response Data Format</label>
                                 <select 
+
                                     className="custom-select" 
                                     id="data-format"
                                     defaultValue="json"
@@ -150,7 +156,11 @@ class Landing extends React.Component{
                                         <option value="json">json</option>
                                         <option value="xml">xml</option>
                                 </select>
-                                <button type="submit" className="btn btn-primary" name="data-go-estimate">Estimate</button>
+                                <button 
+                                type="submit" 
+                                className="btn btn-primary" 
+                                name="data-go-estimate"
+                                data-go-estimate>Estimate</button>
                             </form>
                         </div>
                         <div className='request-preview'>
@@ -160,7 +170,7 @@ class Landing extends React.Component{
                         </div>
                     </div>
                     <div className="row">
-                        <h1>response</h1>
+                        <h1>Response</h1>
                         <div className="response-view gatsby-highlight">
                             <pre id="response">{this.state.response &&
                             this.displayFormatDecider(this.state.response)

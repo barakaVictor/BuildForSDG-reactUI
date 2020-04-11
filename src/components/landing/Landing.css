@@ -3,6 +3,10 @@
     text-align: center;
     display: table;
 }
+.row{
+    padding-right: 15px;
+    padding-left: 15px;
+}
 .request-from, .request-preview{
     display: table-cell;
     padding-right: 15px;
