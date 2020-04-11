@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/BuildForSDG-reactUI/static/css/main.62ce2622.chunk.css",
+    "main.css": "/BuildForSDG-reactUI/static/css/main.78c2eb93.chunk.css",
     "main.js": "/BuildForSDG-reactUI/static/js/main.73af7298.chunk.js",
     "main.js.map": "/BuildForSDG-reactUI/static/js/main.73af7298.chunk.js.map",
     "runtime-main.js": "/BuildForSDG-reactUI/static/js/runtime-main.f656051f.js",
@@ -8,15 +8,15 @@
     "static/js/2.c0d66675.chunk.js": "/BuildForSDG-reactUI/static/js/2.c0d66675.chunk.js",
     "static/js/2.c0d66675.chunk.js.map": "/BuildForSDG-reactUI/static/js/2.c0d66675.chunk.js.map",
     "index.html": "/BuildForSDG-reactUI/index.html",
-    "precache-manifest.91f2f3e880fbda6bbdf7c4851d8f96bc.js": "/BuildForSDG-reactUI/precache-manifest.91f2f3e880fbda6bbdf7c4851d8f96bc.js",
+    "precache-manifest.c9b10214f6c890530c76f47c92c890a3.js": "/BuildForSDG-reactUI/precache-manifest.c9b10214f6c890530c76f47c92c890a3.js",
     "service-worker.js": "/BuildForSDG-reactUI/service-worker.js",
-    "static/css/main.62ce2622.chunk.css.map": "/BuildForSDG-reactUI/static/css/main.62ce2622.chunk.css.map",
+    "static/css/main.78c2eb93.chunk.css.map": "/BuildForSDG-reactUI/static/css/main.78c2eb93.chunk.css.map",
     "static/js/2.c0d66675.chunk.js.LICENSE.txt": "/BuildForSDG-reactUI/static/js/2.c0d66675.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f656051f.js",
     "static/js/2.c0d66675.chunk.js",
-    "static/css/main.62ce2622.chunk.css",
+    "static/css/main.78c2eb93.chunk.css",
     "static/js/main.73af7298.chunk.js"
   ]
 }
