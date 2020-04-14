@@ -2,6 +2,7 @@
     margin: auto;
     text-align: center;
     display: table;
+    width: 928px;
 }
 .row{
     padding-right: 15px;
@@ -11,6 +12,7 @@
     display: table-cell;
     padding-right: 15px;
     padding-left: 15px;
+    width: 50%;
 }
 form{
     text-align: left !important;

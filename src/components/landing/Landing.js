@@ -1,5 +1,7 @@
 import React from 'react'
 import axios from 'axios'
+import PrettyXML from '../prettyprintxml/PrettyXML'
+import PrettyJSON from '../prettyjson/PrettyJSON'
 import './Landing.css'
 
 class Landing extends React.Component{
@@ -8,7 +10,7 @@ class Landing extends React.Component{
         super(props)
         this.state = {
             request_data: {
-                "region": {
+                region: {
                     "name": "Africa",
                     "avgAge": 19.7,
                     "avgDailyIncomeInUSD": 5,
@@ -24,53 +26,17 @@ class Landing extends React.Component{
             
         }
         this.fetchImpactEstimate = this.fetchImpactEstimate.bind(this)
-        this.transformXML = this.transformXML.bind(this)
         this.displayFormatDecider = this.displayFormatDecider.bind(this)
         
     }
-    transformXML(xmlText) {
-        var xsltText = ` 
-        <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-        <!-- Here is the magic: set indent to format the output -->
-        <xsl:output omit-xml-declaration="yes" indent="yes"/>
     
-        <!-- Match any element or attribute -->
-        <xsl:template match="node()|@*">
-          <xsl:copy>
-            <xsl:apply-templates select="node()|@*"/>
-          </xsl:copy>
-        </xsl:template>
-      </xsl:stylesheet>`
-
-        // Bomb out if this browser does not support DOM parsing and transformation
-        if (!(window.DOMParser && window.XSLTProcessor)) {
-          return xmlText;
-        }
-        
-        // Load the XSLT into a document
-        var xsltDoc = new DOMParser().parseFromString(xsltText, "text/xml");
-      
-        // Apply that document to as a stylesheet to a transformer
-        var xslt = new XSLTProcessor();
-        xslt.importStylesheet(xsltDoc);
-      
-        // Load the XML into a document.
-        // Trim any preceding whitespace to prevent parse failure.
-        var xml = new DOMParser().parseFromString(xmlText.trim(), "text/xml");
-      
-        // Transform it
-        var transformedXml = xslt.transformToDocument(xml);
-      
-        // Apply the transformed document if it was successful
-        return (!transformedXml) ? xmlText :
-          new XMLSerializer().serializeToString(transformedXml);
-    }
     displayFormatDecider(data){
         if(data.mimetype === "application/xml"){
-            return this.transformXML(data.data)
+            return <PrettyXML data={data.data} />
         }
-        return JSON.stringify(data.data, undefined, 4)
+        return <PrettyJSON data={data.data}/>
     }
+
     fetchImpactEstimate(event){
         event.preventDefault()
         let api_url = "https://covid19-estimator.herokuapp.com/api/v1/on-covid-19"
@@ -93,7 +59,64 @@ class Landing extends React.Component{
                     <h1>Covid19Estimator UI</h1>
                     <div className="row">
                         <div className="request-from">
+                            <h2>Request</h2>
                             <form onSubmit={this.fetchImpactEstimate}>
+                                <label htmlFor="region">Region</label>
+                                <input 
+                                    type="text" 
+                                    className="form-control" 
+                                    id="data-region-name" 
+                                    value={this.state.request_data.region.name}
+                                    onChange={(e)=>this.setState({
+                                        request_data:{
+                                            ...this.state.request_data, region:{
+                                                ...this.state.request_data.region, name: e.target.value
+                                            }
+                                        }
+                                    })}/>
+                                
+                                <label htmlFor="data-region-avgage">Average Age</label>
+                                <input 
+                                    type="number" 
+                                    className="form-control" 
+                                    id="data-region-avgage" 
+                                    value={this.state.request_data.region.avgAge}
+                                    onChange={(e)=>this.setState({
+                                        request_data:{
+                                            ...this.state.request_data, region:{
+                                                ...this.state.request_data.region, avgAge: Number(e.target.value)
+                                            }
+                                        }
+                                    })}/>
+                                
+                                <label htmlFor="data-region-avgDailyIncomeInUSD">Average Daily Income (USD)</label>
+                                <input 
+                                    type="number" 
+                                    className="form-control" 
+                                    id="data-region-avgDailyIncomeInUSD" 
+                                    value={this.state.request_data.region.avgDailyIncomeInUSD}
+                                    onChange={(e)=>this.setState({
+                                        request_data:{
+                                            ...this.state.request_data, region:{
+                                                ...this.state.request_data.region, avgDailyIncomeInUSD: Number(e.target.value)
+                                            }
+                                        }
+                                    })}/>
+                                
+                                <label htmlFor="data-region-avgDailyIncomePopulation">Population with Daily Income</label>
+                                <input 
+                                    type="number" 
+                                    className="form-control" 
+                                    id="data-region-avgDailyIncomePopulation" 
+                                    value={this.state.request_data.region.avgDailyIncomePopulation}
+                                    onChange={(e)=>this.setState({
+                                        request_data:{
+                                            ...this.state.request_data, region:{
+                                                ...this.state.request_data.region, avgDailyIncomePopulation: Number(e.target.value)
+                                            }
+                                        }
+                                    })}/>
+                                
                                 <label htmlFor="data-population">Population</label>
                                 <input 
                                     type="number" 
@@ -164,19 +187,17 @@ class Landing extends React.Component{
                             </form>
                         </div>
                         <div className='request-preview'>
-                            <pre>
-                                { JSON.stringify(this.state.request_data, undefined, 4)}
-                            </pre>
+                            <h2>Response</h2>
+                            <div className="response-view gatsby-highlight">
+                                <pre id="response">{this.state.response &&
+                                this.displayFormatDecider(this.state.response)
+                                }
+                                </pre>
+                            </div>
                         </div>
                     </div>
                     <div className="row">
-                        <h1>Response</h1>
-                        <div className="response-view gatsby-highlight">
-                            <pre id="response">{this.state.response &&
-                            this.displayFormatDecider(this.state.response)
-                            }
-                            </pre>
-                        </div>
+                            <pre><PrettyJSON data={this.state.request_data}/></pre>
                     </div>
                 </div>
             </div>
