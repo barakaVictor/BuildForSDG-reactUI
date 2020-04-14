@@ -61,7 +61,7 @@ class Landing extends React.Component{
                         <div className="request-from">
                             <h2>Request</h2>
                             <form onSubmit={this.fetchImpactEstimate}>
-                                <label htmlFor="region">Region</label>
+                                <label htmlFor="data-region-name">Region</label>
                                 <input 
                                     type="text" 
                                     className="form-control" 
@@ -195,9 +195,6 @@ class Landing extends React.Component{
                                 </pre>
                             </div>
                         </div>
-                    </div>
-                    <div className="row">
-                            <pre><PrettyJSON data={this.state.request_data}/></pre>
                     </div>
                 </div>
             </div>
