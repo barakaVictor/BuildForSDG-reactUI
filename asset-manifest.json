@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/BuildForSDG-reactUI/static/css/main.057afe79.chunk.css",
-    "main.js": "/BuildForSDG-reactUI/static/js/main.8a1209d4.chunk.js",
-    "main.js.map": "/BuildForSDG-reactUI/static/js/main.8a1209d4.chunk.js.map",
+    "main.js": "/BuildForSDG-reactUI/static/js/main.8efbdeac.chunk.js",
+    "main.js.map": "/BuildForSDG-reactUI/static/js/main.8efbdeac.chunk.js.map",
     "runtime-main.js": "/BuildForSDG-reactUI/static/js/runtime-main.f656051f.js",
     "runtime-main.js.map": "/BuildForSDG-reactUI/static/js/runtime-main.f656051f.js.map",
     "static/js/2.89e813be.chunk.js": "/BuildForSDG-reactUI/static/js/2.89e813be.chunk.js",
     "static/js/2.89e813be.chunk.js.map": "/BuildForSDG-reactUI/static/js/2.89e813be.chunk.js.map",
     "index.html": "/BuildForSDG-reactUI/index.html",
-    "precache-manifest.0a345d6d425bca73f34f0ee42a721c07.js": "/BuildForSDG-reactUI/precache-manifest.0a345d6d425bca73f34f0ee42a721c07.js",
+    "precache-manifest.d4c325d4831fe09e671a460a492f13f3.js": "/BuildForSDG-reactUI/precache-manifest.d4c325d4831fe09e671a460a492f13f3.js",
     "service-worker.js": "/BuildForSDG-reactUI/service-worker.js",
     "static/css/main.057afe79.chunk.css.map": "/BuildForSDG-reactUI/static/css/main.057afe79.chunk.css.map",
     "static/js/2.89e813be.chunk.js.LICENSE.txt": "/BuildForSDG-reactUI/static/js/2.89e813be.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.f656051f.js",
     "static/js/2.89e813be.chunk.js",
     "static/css/main.057afe79.chunk.css",
-    "static/js/main.8a1209d4.chunk.js"
+    "static/js/main.8efbdeac.chunk.js"
   ]
 }
